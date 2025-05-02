@@ -59,7 +59,7 @@ const CreateMeeting = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/meetings', {
+      const response = await fetch('https://meeting-scheduler-backend-cj6o.onrender.com/api/meetings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ const MeetingCard = ({ meeting, onDelete }) => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this meeting?')) {
       try {
-        const response = await fetch(`http://localhost:3000/api/meetings/${meeting._id}`, {
+        const response = await fetch(`https://meeting-scheduler-backend-cj6o.onrender.com/api/meetings/${meeting._id}`, {
           method: 'DELETE'
         });
         if (response.ok) {
@@ -106,7 +106,7 @@ const MeetingsList = () => {
   const fetchMeetings = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:3000/api/meetings', {
+      const response = await fetch('https://meeting-scheduler-backend-cj6o.onrender.com/api/meetings', {
         headers: {
           'user-email': user
         }

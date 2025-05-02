@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext(null);
@@ -7,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (email, username, password) => {
     try {
-      const response = await fetch('http://localhost:3000/api/auth/signup', {
+      const response = await fetch('https://meeting-scheduler-backend-cj6o.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

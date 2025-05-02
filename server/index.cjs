@@ -4,10 +4,14 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'user-email']
+}));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/meeting-scheduler', {
+mongoose.connect('mongodb+srv://hema:hema28pranathi29@cluster0.hjts9.mongodb.net/meeting_scheduler?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -33,7 +33,7 @@ const Dashboard = () => {
     try {
       setIsLoading(true);
       setError(null);
-      const response = await fetch(`http://localhost:3000/api/meetings/dashboard/${user}`, {
+      const response = await fetch(`https://meeting-scheduler-backend-cj6o.onrender.com/api/meetings/dashboard/${user}`, {
         headers: {
           'user-email': user
         }
