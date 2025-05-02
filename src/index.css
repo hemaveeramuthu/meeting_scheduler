@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  @apply bg-gradient-radial from-gray-850 to-gray-900 text-gray-100;
+}
+
+@layer utilities {
+  .transform {
+    transform: translateX(0);
+  }
+  
+  .translate-x-full {
+    transform: translateX(100%);
+  }
+  
+  .-translate-x-full {
+    transform: translateX(-100%);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+
+  .duration-600 {
+    transition-duration: 600ms;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.shine-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shine 3s infinite linear;
+}
+
+@layer components {
+  .input-dark {
+    @apply w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200 hover:bg-gray-800;
+  }
+  
+  .btn-gradient {
+    @apply bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium rounded-lg hover:opacity-90 transition duration-200;
+  }
+}
